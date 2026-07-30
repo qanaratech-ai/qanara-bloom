@@ -16,6 +16,8 @@ import {
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { ScanUploadDialog } from "@/components/ScanUploadDialog";
+
 import { useLanguage } from "@/contexts/LanguageContext";
 import logoAsset from "@/assets/qanara-logo.png.asset.json";
 
@@ -107,7 +109,9 @@ export function DashboardLayout({ children }: { children: ReactNode }) {
           </div>
 
           <div className="flex items-center gap-2">
+            <ScanUploadDialog />
             <LanguageSwitcher />
+
             <button className="relative rounded-md p-2 hover:bg-muted">
               <Bell className="h-5 w-5" />
               <span className="absolute right-1 top-1 flex h-4 w-4 items-center justify-center rounded-full bg-destructive text-[10px] font-bold text-destructive-foreground">
