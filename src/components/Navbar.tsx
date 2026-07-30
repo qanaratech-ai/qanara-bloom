@@ -3,6 +3,8 @@ import { Link } from "@tanstack/react-router";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { ScanUploadDialog } from "./ScanUploadDialog";
+
 import { useLanguage } from "@/contexts/LanguageContext";
 import logoAsset from "@/assets/qanara-logo.png.asset.json";
 
@@ -40,7 +42,9 @@ export function Navbar() {
         </nav>
 
         <div className="hidden items-center gap-2 md:flex">
+          <ScanUploadDialog />
           <LanguageSwitcher />
+
           <Button variant="ghost" size="sm" asChild>
             <Link to="/login">{t("nav.signIn")}</Link>
           </Button>
@@ -75,7 +79,9 @@ export function Navbar() {
               </a>
             ))}
             <div className="flex flex-col gap-2 pt-2">
+              <ScanUploadDialog />
               <LanguageSwitcher variant="outline" />
+
               <Button variant="outline" asChild>
                 <Link to="/login">{t("nav.signIn")}</Link>
               </Button>
